@@ -11,4 +11,11 @@ defmodule Advent.Helpers do
     |> Enum.map(&String.trim/1)
     |> Enum.to_list()
   end
+
+  def read_int_line(path, separator) do
+    File.read!(path)
+    |> String.trim()
+    |> String.split(separator)
+    |> Enum.map(&String.to_integer/1)
+  end
 end
