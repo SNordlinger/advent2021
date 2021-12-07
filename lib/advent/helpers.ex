@@ -12,7 +12,7 @@ defmodule Advent.Helpers do
     |> Enum.to_list()
   end
 
-  def read_int_line(path, separator) do
+  def read_ints(path, separator) do
     File.read!(path)
     |> String.trim()
     |> String.split(separator)

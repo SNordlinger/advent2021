@@ -8,11 +8,11 @@ defmodule Advent.Day6 do
   end
 
   def part1 do
-    Helpers.read_int_line("data/day_6.txt", ",") |> calc_count(80)
+    Helpers.read_ints("data/day_6.txt", ",") |> calc_count(80)
   end
 
   def part2 do
-    Helpers.read_int_line("data/day_6.txt", ",") |> calc_count(256)
+    Helpers.read_ints("data/day_6.txt", ",") |> calc_count(256)
   end
 end
 
