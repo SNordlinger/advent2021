@@ -18,4 +18,20 @@ defmodule Advent.Helpers do
     |> String.split(separator)
     |> Enum.map(&String.to_integer/1)
   end
+
+  def parse_int_grid(lines) do
+    lines
+    |> Enum.with_index()
+    |> Enum.map(fn {line, row_num} -> parse_row(line, row_num) end)
+    |> List.flatten()
+    |> Map.new()
+  end
+
+  defp parse_row(line, row_num) do
+    line
+    |> String.codepoints()
+    |> Enum.map(&String.to_integer/1)
+    |> Enum.with_index()
+    |> Enum.map(fn {val, col_num} -> {{col_num, row_num}, val} end)
+  end
 end
